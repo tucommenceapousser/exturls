@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide d'Utilisation du Bookmarklet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function loadBookmarklet() {
+            var script = document.createElement('script');
+            script.src = 'https://static-trkn.replit.app/exturls/exturl.js';
+            script.type = 'text/javascript';
+            script.async = true;
+
+            script.onload = function() {
+                alert("Le script a été chargé et exécuté avec succès.");
+            };
+
+            script.onerror = function() {
+                alert("Erreur lors du chargement du script.\nVérifiez l'URL : " + script.src + "\n\nVérifiez également que le script existe et est accessible.");
+                console.error("Erreur lors du chargement du script :", script.src);
+            };
+
+            document.head.appendChild(script);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Guide d'Utilisation du Bookmarklet</h1>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Introduction</h2>
+            <p>Ce document explique comment ajouter un bookmarklet à vos favoris et comment l'utiliser après avoir hébergé le code nécessaire.</p>
+        </section>
+
+        <section class="instructions">
+            <h2>Ajouter le Bookmarklet aux Favoris</h2>
+
+            <div class="step">
+                <h3>1. Créer le Bookmarklet</h3>
+                <p>Copiez le code du bookmarklet. Il devrait ressembler à quelque chose comme :</p>
+                <pre><code>javascript:(function() {
+  // Code du bookmarklet ici
+})();</code></pre>
+                <p>Assurez-vous que le code est complet et correctement formé.</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Ajouter aux Favoris</h3>
+                <p>Ouvrez votre navigateur web.</p>
+                <ul>
+                    <li><strong>Pour Chrome</strong> : Cliquez sur l'étoile dans la barre d'adresse et sélectionnez "Ajouter aux favoris".</li>
+                    <li><strong>Pour Firefox</strong> : Cliquez sur l'étoile dans la barre d'adresse et sélectionnez "Ajouter aux favoris".</li>
+                    <li><strong>Pour Edge</strong> : Cliquez sur l'étoile dans la barre d'adresse et sélectionnez "Ajouter aux favoris".</li>
+                </ul>
+                <p>Dans le champ "URL" ou "Adresse", collez le code du bookmarklet.</p>
+                <p>Donnez un nom au bookmarklet pour le reconnaître facilement.</p>
+                <p>Enregistrez le favori.</p>
+            </div>
+        </section>
+
+        <section class="hosting">
+            <h2>Héberger la Seconde Partie du Code</h2>
+
+            <div class="step">
+                <h3>1. Hébergement</h3>
+                <p>Hébergez la seconde partie du code (le script ou les ressources nécessaires) sur un serveur web. Vous pouvez utiliser des services d'hébergement gratuits ou payants, selon vos besoins.</p>
+                <p>Assurez-vous que le code est accessible publiquement via une URL.</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Mettre à Jour le Bookmarklet</h3>
+                <p>Modifiez le code du bookmarklet pour inclure l'URL où la seconde partie du code est hébergée. Par exemple :</p>
+                <pre><code>javascript:(function() {
+  var script = document.createElement('script');
+  script.src = 'https://static-trkn.replit.app/exturls/exturl.js';
+  document.head.appendChild(script);
+})();</code></pre>
+                <p>Remplacez <code>https://static-trkn.replit.app/exturls/exturl.js</code> par l'URL réelle où le code est hébergé.</p><a href="http://counottes.fr" target="_blank">http://counottes.fr</a>
+            </div>
+
+            <div class="step">
+                <h3>3. Tester</h3>
+                <p>Accédez à une page web de votre choix.</p>
+                <p>Cliquez sur le bookmarklet dans vos favoris.</p>
+                <p>Vérifiez que le code s'exécute correctement et que la fonctionnalité attendue est activée.</p>
+            </div>
+        </section>
+
+        <section class="demo">
+            <h2>Démo du Bookmarklet</h2>
+            <p>Vous pouvez cliquer sur le bouton ci-dessous pour tester le bookmarklet directement sur cette page :</p>
+            <button onclick="loadBookmarklet()" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Exécuter le Bookmarklet
+            </button>
+        </section>
+
+        <section class="conclusion">
+            <h2>Conclusion</h2>
+            <p>Vous avez maintenant ajouté le bookmarklet à vos favoris et configuré l'accès à la seconde partie du code. Assurez-vous que tout fonctionne correctement en testant le bookmarklet sur différentes pages web.</p>
+            <p>Pour toute question ou problème, n'hésitez pas à consulter la documentation du bookmarklet ou à contacter le support technique.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TRHACKNON. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
